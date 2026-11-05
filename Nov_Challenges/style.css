@@ -1,0 +1,15 @@
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+    #map {
+    height: 100vh;
+    }
+    h2 {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: 1000;
+    color: #17b6c7;
+    text-shadow: 1px 1px 4px black;
+    }
