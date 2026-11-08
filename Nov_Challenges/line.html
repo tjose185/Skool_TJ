@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charger Maintenance Route</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        #map {
+            height: 100vh;
+        }
+
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        h3 {
+            margin: 0 0 8px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <div id='info'>
+        <h3>EV Charger Maintenance Route</h3>
+        <p id='result'>Finding an efficient route...</p>
+    </div>
+    <script>
+        const map = L.map('map').setView([52.52, 13.405], 12);
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '...',
+            ext: 'png'
+        }).addTo(map);
+    </script>
+</body>
+
+</html>
