@@ -88,8 +88,15 @@
                         .bindTooltip(index === 0 ? 'D' : String(number), {
                             permanent: true, direction: 'top'
                         }).addTo(map);
-            });
-                map.fitBounds(line.getBounds());
+                });
+                const mark = L.marker([52.5210,13.50])
+                mark.bindPopup("<b>Custom Standalone Marker</b><br>Independent of route tracking sequence.").addTo(map);
+                const group = L.featureGroup([line, mark]);
+                map.fitBounds(group.getBounds(), {
+                    padding: [30, 30]
+                });
+                // map.fitBounds(line.getBounds());
+
 
                 document.getElementById('result').textContent =
                     (stops.length - 1) + ' stops · ' + (route.distance / 1000).toFixed(1) + ' km · ' +
