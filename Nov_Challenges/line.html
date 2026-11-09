@@ -91,6 +91,7 @@
                 });
                 const mark = L.marker([52.5210,13.50])
                 mark.bindPopup("<b>Custom Standalone Marker</b><br>Independent of route tracking sequence.").addTo(map);
+                mark.bindTooltip("New Marker", {permanent: true, direction: 'top' }).addTo(map);
                 const group = L.featureGroup([line, mark]);
                 map.fitBounds(group.getBounds(), {
                     padding: [30, 30]
